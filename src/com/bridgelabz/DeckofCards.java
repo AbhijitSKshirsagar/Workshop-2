@@ -5,7 +5,7 @@
 2. Expected to have OOPs
 3. Expected to have Data Structures
 
- Add the method to sequence the Players order and how they should receive the cards and further order for play.
+ Each time we distribute the cards with the Player, Condition is that we shuffle the cards. Make a function to shuffle the cards
 
  */
 
@@ -59,6 +59,21 @@ public class DeckofCards {
 	// cards and further order for play
 	public void sequenceOfPlay(int player) {
 		System.out.println("\nSequence of cards are below : ");
+		toshuffle(cardsDeck, player);
+	}
+
+	// create a method to distribute the cards with the Player
+	public static ArrayList<String> toshuffle(ArrayList<String> cardsDeck, int player) {
+		System.out.println("Shuffling the cards before Distribution");
+		ArrayList<String> temp = new ArrayList<String>();
+		while (!cardsDeck.isEmpty()) {
+			int loc = (int) (Math.random() * cardsDeck.size());
+			temp.add(cardsDeck.get(loc));
+			cardsDeck.remove(loc);
+		}
+		cardsDeck = temp;
+		toDisplay(cardsDeck);
+		return cardsDeck;
 	}
 
 	public static void main(String[] args) {

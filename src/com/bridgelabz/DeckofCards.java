@@ -5,7 +5,7 @@
 2. Expected to have OOPs
 3. Expected to have Data Structures
 
- Moving forward we need to have more than 2 players and Max 4 Players, Create Players Class to add Players from console.
+ Add the method to sequence the Players order and how they should receive the cards and further order for play.
 
  */
 
@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 public class DeckofCards {
 	Scanner scanner = new Scanner(System.in);
+	private static final String[][] deckofCards = null;
 	public ArrayList<String> cardsDeck = new ArrayList<String>();
 
 	public void deckofCards() {
@@ -46,16 +47,25 @@ public class DeckofCards {
 		int player = scanner.nextInt();
 		if (player >= 2 && player <= 4) {
 			System.out.println("\n" + player + " players will play the game");
+			sequenceOfPlay(player);
 		} else {
 			System.out.println("Please enter number of players in the Range");
+			noOfPlayers();
 		}
 		scanner.close();
 	}
 
+	// create a method to sequence the Players order and how they should receive the
+	// cards and further order for play
+	public void sequenceOfPlay(int player) {
+		System.out.println("\nSequence of cards are below : ");
+	}
+
 	public static void main(String[] args) {
-		System.out.println("Welcome to Deck of Cards the Game");
+
 		DeckofCards deckofCards = new DeckofCards();
 		deckofCards.deckofCards();
 		deckofCards.noOfPlayers();
+
 	}
 }
